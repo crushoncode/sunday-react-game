@@ -1,5 +1,4 @@
 import React from 'react';
-import { calculateWinner } from './CalculateWinner';
 import { Square } from './Square';
 
 // Since the Square components no longer maintain state,
