@@ -9,21 +9,6 @@ import { Square } from './Square';
 // The Board has full control over them.
 
 class Board extends React.Component {
-  handleClick(i) {
-    // call .slice() to create a new copy of the squares array after every move to modify, and treat it as immutable.
-    // The original array will not be modified.
-    const squares = this.state.squares.slice();
-    // ignore a click if someone has won the game or if a Square is already filled.
-    if (calculateWinner(squares) || squares[i]) {
-      return;
-    }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
-      squares: squares,
-      xIsNext: !this.state.xIsNext
-    });
-  }
-
   renderSquare(i) {
     return (
       <Square
